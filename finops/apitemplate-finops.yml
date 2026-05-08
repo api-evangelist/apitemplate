@@ -5,7 +5,7 @@ provider: APITemplate.io
 providerId: apitemplate
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Document Generation
 - PDF
@@ -15,10 +15,16 @@ tags:
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for APITemplate.io. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps profile for APITemplate.io. Billing is a flat monthly
+  tier fee; PDF-only and combined PDF+Image tracks let teams pay only for
+  what they need. Annual billing is 15-30% cheaper than monthly. Pay-as-
+  you-go overage is available on Enterprise.
+notes: >-
+  Right-sizing the track (PDF-only vs combined) is the highest-leverage
+  optimisation, followed by stepping up tier for sustained usage.
 sources:
-- https://apitemplate.io/
+- https://apitemplate.io/pricing/
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -29,13 +35,12 @@ alignedWith:
 publisherName: APITemplate.io
 serviceCategory: Document Generation
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
+  pricingCategory: Subscription (output-tiered)
+  billingFrequency: Monthly / Annual
   billingCurrency: USD
   chargeCategories:
-  - Usage
   - Purchase
-  - Adjustment
+  - Usage
 focusColumns:
   ServiceName: APITemplate.io
   ServiceCategory: Document Generation
@@ -43,24 +48,46 @@ focusColumns:
   PublisherName: APITemplate.io
   InvoiceIssuerName: APITemplate.io
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Purchase
+  PricingUnit: plan-month
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: plan_subscription
+  description: Flat monthly plan fee (PDF-only or combined).
+  unit: month
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - track
+  - tier
+- name: pdfs_generated
+  description: PDFs generated against monthly bundle.
+  unit: pdf
+  aggregation: sum
+  dimensions:
+  - account
+  - template
+- name: images_generated
+  description: Images generated against monthly bundle (combined plans).
+  unit: image
+  aggregation: sum
+  dimensions:
+  - account
+  - template
+- name: payg_overage
+  description: PAYG overage on Enterprise.
+  unit: output
+  aggregation: sum
+  dimensions:
+  - account
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Use APITemplate dashboard usage page; export per-template counts for chargeback.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Use template naming and AWS S3 storage option to allocate output cost by team.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Pick PDF-only vs combined track based on actual mix; switch to annual for ~15-30% effective discount; right-size template count.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign template / API-key owners; alert at 75% of monthly bundle.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

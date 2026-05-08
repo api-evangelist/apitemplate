@@ -3,7 +3,11 @@ url: https://raw.githubusercontent.com/api-evangelist/apitemplate/refs/heads/mai
 name: APITemplate.io
 x-type: company
 description: >-
-  APITemplate.io provides a templating service for generating PDFs and images programmatically from HTML/CSS templates.
+  APITemplate.io is a templating service that auto-generates PDFs and images
+  programmatically from HTML/CSS templates with Jinja2-style data binding.
+  Drag-and-drop visual editor; sync and async generation with webhooks;
+  regional endpoints in US, EU, Singapore and Australia. SDKs for Python,
+  JavaScript, PHP, C# and Java.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Document Generation
@@ -11,13 +15,42 @@ tags:
   - Images
   - Templates
   - API
+  - Jinja2
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: apitemplate:rest
+    name: APITemplate.io REST API
+    description: >-
+      REST API for PDF generation (HTML, URL, visual-editor templates) and
+      image generation. Bearer-token auth via API key. Regional endpoints
+      improve latency.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://apitemplate.io/docs/
+    baseURL: https://rest.apitemplate.io/v2
+    tags:
+      - REST
+      - PDF
+      - Image
+      - Async
+      - Webhooks
+    properties:
+      - type: Documentation
+        url: https://apitemplate.io/docs/
+      - type: APIReference
+        url: https://apitemplate.io/api-reference/
+      - type: SDK
+        url: https://github.com/apitemplateio
 common:
   - type: Website
     url: https://apitemplate.io/
+  - type: Documentation
+    url: https://apitemplate.io/docs/
+  - type: Pricing
+    url: https://apitemplate.io/pricing/
+  - type: GitHub
+    url: https://github.com/apitemplateio
   - type: Plans
     url: plans/apitemplate-plans-pricing.yml
   - type: RateLimits

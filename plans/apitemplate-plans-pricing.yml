@@ -5,7 +5,7 @@ provider: APITemplate.io
 providerId: apitemplate
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Document Generation
 - PDF
@@ -13,29 +13,194 @@ tags:
 - Templates
 - API
 - Plans
-description: Placeholder plans/pricing artifact for APITemplate.io. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+- Pricing
+description: >-
+  APITemplate.io publishes two pricing tracks — PDF-only and combined PDF+Image
+  — each with multiple monthly tiers. Annual billing is 15–30% cheaper than
+  monthly. Pay-as-you-go overage is available for Enterprise customers.
+notes: >-
+  Numeric values reflect the public apitemplate.io/pricing page as of
+  2026-05-08. PDF-only plans are usually cheaper than combined plans for
+  PDF-heavy workloads.
 sources:
-- https://apitemplate.io/
+- https://apitemplate.io/pricing/
 plans:
-- id: apitemplate-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: apitemplate-free
+  name: Free
+  type: free
+  description: $0/month; 50 PDFs/month; 3 templates.
   entries:
-  - label: API Access
-    name: api_access
+  - label: Plan price
+    name: monthly_price
     type: flat
-    metric: varies
+    metric: month
     limit: -1
-    timeFrame: usage
+    timeFrame: month
     geo: global
     unit: 1
-    price: see https://apitemplate.io/
+    price: 0
     userMultiplied: false
-  elements:
-  - name: Pending Reconciliation
+  - label: Included PDFs
+    name: included_pdfs
+    type: tier
+    metric: pdfs/month
+    limit: 50
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+- id: apitemplate-pdf-basic
+  name: PDF Basic
+  type: subscription
+  description: $19/month annual; 3,000 PDFs/month; 20 templates.
+  entries:
+  - label: Annual monthly price
+    name: monthly_price_annual
+    type: flat
+    metric: month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 19
+    currency: USD
+    userMultiplied: false
+  - label: Included PDFs
+    name: included_pdfs
+    type: tier
+    metric: pdfs/month
+    limit: 3000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+- id: apitemplate-pdf-standard
+  name: PDF Standard
+  type: subscription
+  description: $69/month annual; 12,000 PDFs/month; 180 templates.
+  entries:
+  - label: Annual monthly price
+    name: monthly_price_annual
+    type: flat
+    metric: month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 69
+    currency: USD
+    userMultiplied: false
+  - label: Included PDFs
+    name: included_pdfs
+    type: tier
+    metric: pdfs/month
+    limit: 12000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+- id: apitemplate-pdf-enterprise
+  name: PDF Enterprise
+  type: subscription
+  description: $139/month annual; 25,000 PDFs/month; unlimited templates.
+  entries:
+  - label: Annual monthly price
+    name: monthly_price_annual
+    type: flat
+    metric: month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 139
+    currency: USD
+    userMultiplied: false
+  - label: Included PDFs
+    name: included_pdfs
+    type: tier
+    metric: pdfs/month
+    limit: 25000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+- id: apitemplate-starter
+  name: Starter (Image + PDF)
+  type: subscription
+  description: $29/month annual; 1,500 combined outputs/month; 15 templates.
+  entries:
+  - label: Annual monthly price
+    name: monthly_price_annual
+    type: flat
+    metric: month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 29
+    currency: USD
+    userMultiplied: false
+  - label: Included outputs
+    name: included_outputs
+    type: tier
+    metric: outputs/month
+    limit: 1500
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+- id: apitemplate-standard-combined
+  name: Standard (Image + PDF)
+  type: subscription
+  description: $69/month annual; 9,000 combined outputs/month; 150 templates.
+  entries:
+  - label: Annual monthly price
+    name: monthly_price_annual
+    type: flat
+    metric: month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 69
+    currency: USD
+    userMultiplied: false
+- id: apitemplate-enterprise-combined
+  name: Enterprise (Image + PDF)
+  type: subscription
+  description: $139/month annual; 20,000 combined outputs/month; unlimited templates.
+  entries:
+  - label: Annual monthly price
+    name: monthly_price_annual
+    type: flat
+    metric: month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 139
+    currency: USD
+    userMultiplied: false
+- id: apitemplate-payg
+  name: Pay-As-You-Go (Enterprise)
+  type: payAsYouGo
+  description: PAYG overage pricing available for Enterprise customers.
+  entries:
+  - label: PAYG overage
+    name: payg_overage
+    type: usage
+    metric: output
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

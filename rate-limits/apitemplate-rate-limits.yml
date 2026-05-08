@@ -15,21 +15,41 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for APITemplate.io. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  APITemplate.io's primary throttle is the per-plan monthly output bundle
+  (PDFs and/or images). Per-second numeric API ceilings are not enumerated in
+  public docs but the platform advertises a 99.99% uptime target with ~2-second
+  typical render time. 429 is returned on excess.
+notes: >-
+  Reconciled flagged false until per-second numeric ceilings are documented
+  publicly. Async generation with webhooks is the recommended pattern for
+  burst workloads.
 sources:
-- https://apitemplate.io/
+- https://apitemplate.io/docs/
+- https://apitemplate.io/pricing/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: Per-plan monthly outputs
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: outputs/month
+  limit: see plan
+  notes: Free 50; PDF Basic 3,000; PDF Standard 12,000; PDF Enterprise 25,000; combined plans 1,500/9,000/20,000.
+- name: REST API requests
+  scope: api_token
+  metric: requests
+  limit: see APITemplate docs
+  notes: 429 on excess; numeric per-second ceiling not publicly documented.
+- name: Templates per plan
+  scope: account
+  metric: templates
+  limit: 3 / 20 / 180 / unlimited
+  notes: Tier-bounded.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Honor 429; use async generation + webhooks for burst workloads.
+- name: Regional endpoints
+  description: Use US, EU, Singapore or Australia endpoints to minimise latency.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
