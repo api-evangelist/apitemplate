@@ -1,0 +1,66 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: APITemplate.io
+providerId: apitemplate
+created: '2026-05-08'
+modified: '2026-05-08'
+reconciled: false
+tags:
+- Document Generation
+- PDF
+- Images
+- Templates
+- API
+- FinOps
+- Cost Management
+- FOCUS
+description: FOCUS-aligned FinOps placeholder for APITemplate.io. Pipeline will replace with real billing details.
+notes: Initial scaffold — billing model has not yet been reconciled.
+sources:
+- https://apitemplate.io/
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: APITemplate.io
+serviceCategory: Document Generation
+billingModel:
+  pricingCategory: To Be Reconciled
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: APITemplate.io
+  ServiceCategory: Document Generation
+  ProviderName: APITemplate.io
+  PublisherName: APITemplate.io
+  InvoiceIssuerName: APITemplate.io
+  BillingCurrency: USD
+  ChargeCategory: Usage
+meters:
+- name: api_usage
+  description: Catch-all meter pending reconciliation.
+  unit: varies
+  aggregation: sum
+  dimensions:
+  - account
+  - resource
+principles:
+- name: Visibility
+  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+- name: Allocation
+  description: Tag invoice line items to consuming business units in your FinOps store.
+- name: Optimization
+  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+- name: Accountability
+  description: Assign a contract owner to review billing against negotiated terms.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
