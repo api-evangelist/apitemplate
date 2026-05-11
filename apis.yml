@@ -57,6 +57,14 @@ common:
     url: rate-limits/apitemplate-rate-limits.yml
   - type: FinOps
     url: finops/apitemplate-finops.yml
+  - type: Integrations
+    url: https://apitemplate.io/integrations/
+integrations:
+  - name: Zapier
+  - name: Make.com
+  - name: Bubble.io
+  - name: Direct URL/Query Strings
+  - name: Airtable
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
