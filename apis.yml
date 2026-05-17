@@ -1,7 +1,7 @@
 aid: apitemplate
 url: https://raw.githubusercontent.com/api-evangelist/apitemplate/refs/heads/main/apis.yml
 name: APITemplate.io
-x-type: company
+kind: company
 description: >-
   APITemplate.io is a templating service that auto-generates PDFs and images
   programmatically from HTML/CSS templates with Jinja2-style data binding.
