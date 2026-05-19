@@ -43,6 +43,8 @@ apis:
       - type: SDK
         url: https://github.com/apitemplateio
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/apitemplate-io
   - type: Website
     url: https://apitemplate.io/
   - type: Documentation
