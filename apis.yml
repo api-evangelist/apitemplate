@@ -8,7 +8,7 @@ description: >-
   Drag-and-drop visual editor; sync and async generation with webhooks;
   regional endpoints in US, EU, Singapore and Australia. SDKs for Python,
   JavaScript, PHP, C# and Java.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Document Generation
   - PDF
@@ -26,7 +26,7 @@ apis:
       REST API for PDF generation (HTML, URL, visual-editor templates) and
       image generation. Bearer-token auth via API key. Regional endpoints
       improve latency.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://apitemplate.io/docs/
     baseURL: https://rest.apitemplate.io/v2
     tags:
