@@ -40,7 +40,7 @@ apis:
         url: https://apitemplate.io/docs/
       - type: APIReference
         url: https://apitemplate.io/api-reference/
-      - type: SDK
+      - type: SDKs
         url: https://github.com/apitemplateio
 common:
   - type: LinkedIn
