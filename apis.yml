@@ -43,6 +43,8 @@ apis:
       - type: SDKs
         url: https://github.com/apitemplateio
 common:
+  - type: DomainSecurity
+    url: security/apitemplate-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/apitemplate-io
   - type: Website
@@ -61,6 +63,8 @@ common:
     url: finops/apitemplate-finops.yml
   - type: Integrations
     url: https://apitemplate.io/integrations/
+  - url: https://apitemplate.io/feed/
+    type: Blog
 integrations:
   - name: Zapier
   - name: Make.com
