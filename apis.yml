@@ -24,6 +24,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apitemplat
 tags:
   - Document Generation
   - PDF
+  - Image
+  - Templates
+  - Jinja2
+tags_raw:
+  - Document Generation
+  - PDF
   - Images
   - Templates
   - API
@@ -42,6 +48,12 @@ apis:
     humanURL: https://apitemplate.io/docs/
     baseURL: https://rest.apitemplate.io/v2
     tags:
+      - REST
+      - PDF
+      - Image
+      - Async
+      - Webhook
+    tags_raw:
       - REST
       - PDF
       - Image
