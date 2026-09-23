@@ -1,0 +1,26 @@
+# Front Door AI Index — apitemplate — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: apitemplate
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: apitemplate.io
+  final_host: apitemplate.io
+  ownership: own
+  owner: apitemplate
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 1
+  host_score: 1
+  density: 0.51
+  words: 1945
+  tiers:
+    agentic: 1
+    core: 0
+    model: 0
+  ambiguous: 12
+  top_terms:
+    automation: 12
+    embedding: 1
