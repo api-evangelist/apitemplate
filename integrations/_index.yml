@@ -79,3 +79,16 @@
     builder: Pipedream repo (component)
   status: not-a-workflow
   arazzo: null
+- slug: apitemplate-bubble-own
+  label: Bubble (own)
+  partner: bubble
+  partner_name: Bubble (own)
+  category: Api
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://bubble.io/plugin/apitemplateio---pdf-generation-api-1662636993742x789191480716820500
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
