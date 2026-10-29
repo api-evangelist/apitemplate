@@ -1,4 +1,4 @@
-# APITemplate.io (apitemplate)
+# APITemplate.io
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,42 +64,104 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-APITemplate.io is a templating service that auto-generates PDFs and images programmatically from HTML/CSS templates with Jinja2-style data binding. Drag-and-drop visual editor; sync and async generation with webhooks; regional endpoints in US, EU, Singapore and Australia.
+APITemplate.io is a templating service that auto-generates PDFs and images programmatically from HTML/CSS templates with Jinja2-style data binding. Drag-and-drop visual editor; sync and async generation with webhooks; regional endpoints in US, EU, Singapore and Australia. SDKs for Python, JavaScript, PHP, C# and Java.
 
-**APIs.json:** [apis.yml](apis.yml)
+**Areas:** Document Generation · PDF · Image · Templates · Jinja2
 
-## APIs
-- **APITemplate.io REST** — `https://rest.apitemplate.io/v2` — generate PDFs (HTML, URL, visual-editor templates) and images. Bearer-token auth. SDKs for Python, JavaScript, PHP, C# and Java. [Docs](https://apitemplate.io/docs/) · [API Reference](https://apitemplate.io/api-reference/).
+## APITemplate.io on APIs.io
 
-## OpenAPI
-APITemplate.io does not currently publish a downloadable OpenAPI/Swagger document at a stable public URL as of 2026-05-08; pipeline did not retrieve a spec into `openapi/`.
+Everything profiled for APITemplate.io is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apitemplate/](https://apis.io/providers/apitemplate/)** — or go straight to one of the APIs or properties below.
 
-## Tags
-Document Generation, PDF, Images, Templates, API, Jinja2
+### APIs (1)
 
-## Common Properties
-- [Website](https://apitemplate.io/) · [Docs](https://apitemplate.io/docs/) · [Pricing](https://apitemplate.io/pricing/) · [GitHub](https://github.com/apitemplateio)
-- [Plans](plans/apitemplate-plans-pricing.yml) — reconciled
-- [Rate Limits](rate-limits/apitemplate-rate-limits.yml) — partially reconciled (per-second numeric limits not public)
-- [FinOps](finops/apitemplate-finops.yml) — reconciled, FOCUS-aligned
+- [APITemplate.io REST API](https://apis.io/apis/apitemplate/rest/) — REST API for PDF generation (HTML, URL, visual-editor templates) and image generation. Bearer-token auth via API key. Regional endpoints improve latency.
 
-## Plans (reconciled — annual prices)
-**PDF-only:**
-- **Free** — 50 PDFs/mo, 3 templates.
-- **PDF Basic** — $19/mo, 3,000 PDFs, 20 templates.
-- **PDF Standard** — $69/mo, 12,000 PDFs, 180 templates.
-- **PDF Enterprise** — $139/mo, 25,000 PDFs, unlimited templates.
+### Published properties
 
-**Image + PDF combined:**
-- **Starter** — $29/mo, 1,500 outputs, 15 templates.
-- **Standard** — $69/mo, 9,000 outputs, 150 templates.
-- **Enterprise** — $139/mo, 20,000 outputs, unlimited templates.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-PAYG overage available on Enterprise. Monthly billing is 15–30% more than annual.
+#### Security (1)
 
-## Timestamps
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-08
+Authentication, trust centre, and vulnerability disclosure.
 
-## Maintainers
-- **Kin Lane** — kin@apievangelist.com
+- [Apitemplate Domain Security](https://apis.io/security/apitemplate/apitemplate-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apitemplate Plans Pricing](https://apis.io/plans/apitemplate/apitemplate-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apitemplate Rate Limits](https://apis.io/rate-limits/apitemplate/apitemplate-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apitemplate Finops](https://apis.io/finops/apitemplate/apitemplate-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://apitemplate.io/)
+- [Documentation](https://apitemplate.io/docs/)
+- [Pricing](https://apitemplate.io/pricing/)
+- [Blog](https://apitemplate.io/feed/)
+
+## API Evangelist rating
+
+**Kin Score 14.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 18.4 |
+
+**Agent readiness 0.6** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apitemplate/](https://apis.io/providers/apitemplate/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for APITemplate.io: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apitemplate/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
